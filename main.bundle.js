@@ -229,7 +229,7 @@ var ContactMeComponent = /** @class */ (function () {
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Bård Løkås</h1>\r\n<div>\r\n  <div>\r\n    <a href=\"mailto:post@bardlokas.no\" style=\"font-size: 50px\">Email <i class=\"fas fa-envelope\"></i></a>\r\n  </div>\r\n  <div>\r\n    <a href=\"www.github.com/bardlokas\" style=\"font-size: 50px\">Github <i class=\"fab fa-github\"></i></a>\r\n  </div>\r\n  <div>\r\n    <a href=\"https://www.linkedin.com/in/bardlokas/\" style=\"font-size: 50px\">Linkedin <i\r\n        class=\"fab fa-linkedin\"></i></a>\r\n  </div>\r\n</div>"
+module.exports = "<h1>Bård Løkås</h1>\r\n<div>\r\n  <div>\r\n    <a href=\"mailto:post@bardlokas.no\" style=\"font-size: 50px\">Email <i class=\"fas fa-envelope\"></i></a>\r\n  </div>\r\n  <div>\r\n    <a href=\"https://www.github.com/bardlokas\" style=\"font-size: 50px\">Github <i class=\"fab fa-github\"></i></a>\r\n  </div>\r\n  <div>\r\n    <a href=\"https://www.linkedin.com/in/bardlokas/\" style=\"font-size: 50px\">Linkedin <i\r\n        class=\"fab fa-linkedin\"></i></a>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
