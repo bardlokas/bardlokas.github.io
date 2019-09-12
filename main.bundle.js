@@ -27,7 +27,7 @@ module.exports = ""
 /***/ "./src/app/about-me/about-me.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>About Me</h1>\r\n<p>\r\n  about-me works!\r\n</p>\r\n"
+module.exports = "<h1>About Me</h1>\r\n<p>\r\n  TODO\r\n</p>\r\n"
 
 /***/ }),
 
@@ -77,7 +77,7 @@ module.exports = "@media (max-width: 767px) {\r\n  /* On small screens, the nav 
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class='container-fluid'>\r\n  <div class='row'>\r\n    <div class='col-sm-3'>\r\n      <app-nav-menu></app-nav-menu>\r\n    </div>\r\n    <div class='col-sm-9 body-content'>\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class='container-fluid'>\r\n  <div class='row'>\r\n    <div class='col-sm-3'>\r\n      <app-nav-menu></app-nav-menu>\r\n    </div>\r\n    <div class='col-sm-9 body-content'>\r\n      <router-outlet></router-outlet>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -186,7 +186,7 @@ module.exports = ""
 /***/ "./src/app/contact-me/contact-me.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Contact Me</h1>\r\n<p>\r\n  contact-me works!\r\n</p>\r\n"
+module.exports = "<div>\r\n  <div >\r\n    <a href=\"mailto:post@bardlokas.no\" style=\"font-size: 50px\">Email <i class=\"fas fa-envelope\"></i></a>\r\n  </div>\r\n  <div >\r\n    <a href=\"www.github.com/bardlokas\" style=\"font-size: 50px\">Github <i class=\"fab fa-github\"></i></a>\r\n  </div>\r\n  <div >\r\n    <a href=\"https://www.linkedin.com/in/bardlokas/\" style=\"font-size: 50px\">Linkedin <i class=\"fab fa-linkedin\"></i></a>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -229,7 +229,7 @@ var ContactMeComponent = /** @class */ (function () {
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Hello, world!</h1>\r\n<p>Welcome to your new single-page application, built with:</p>\r\n<ul>\r\n  <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>\r\n  <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>\r\n  <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>\r\n</ul>\r\n<p>To help you get started, we've also set up:</p>\r\n<ul>\r\n  <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>\r\n  <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>\r\n  <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>\r\n</ul>\r\n<p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into it.</p>\r\n"
+module.exports = "<h1>Bård Løkås</h1>\r\n<div>\r\n  <div>\r\n    <a href=\"mailto:post@bardlokas.no\" style=\"font-size: 50px\">Email <i class=\"fas fa-envelope\"></i></a>\r\n  </div>\r\n  <div>\r\n    <a href=\"www.github.com/bardlokas\" style=\"font-size: 50px\">Github <i class=\"fab fa-github\"></i></a>\r\n  </div>\r\n  <div>\r\n    <a href=\"https://www.linkedin.com/in/bardlokas/\" style=\"font-size: 50px\">Linkedin <i\r\n        class=\"fab fa-linkedin\"></i></a>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -272,7 +272,7 @@ module.exports = "li .glyphicon {\r\n    margin-right: 10px;\r\n}\r\n\r\n/* High
 /***/ "./src/app/nav-menu/nav-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-inverse'>\r\n        <div class='navbar-header'>\r\n            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>\r\n                <span class='sr-only'>Toggle navigation</span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n            </button>\r\n            <a class='navbar-brand' [routerLink]='[\"/\"]'>Menu</a>\r\n        </div>\r\n        <div class='clearfix'></div>\r\n        <div class='navbar-collapse collapse' [ngClass]='{ \"in\": isExpanded }'>\r\n            <ul class='nav navbar-nav'>\r\n                <li [routerLinkActive]='[\"link-active\"]' [routerLinkActiveOptions]='{ exact: true }'>\r\n                    <a [routerLink]='[\"/\"]' (click)='collapse()'>\r\n                        <span class='glyphicon glyphicon-home'></span> Home\r\n                    </a>\r\n                </li>\r\n                <li [routerLinkActive]='[\"link-active\"]'>\r\n                  <a [routerLink]='[\"/about-me\"]' (click)='collapse()'>\r\n                      <span class='glyphicon glyphicon-user'></span> About Me\r\n                  </a>\r\n                </li>\r\n                <li [routerLinkActive]='[\"link-active\"]'>\r\n                  <a [routerLink]='[\"/contact-me\"]' (click)='collapse()'>\r\n                      <span class='glyphicon glyphicon-pencil'></span> Contact Me\r\n                  </a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class='main-nav'>\r\n    <div class='navbar navbar-inverse'>\r\n        <div class='navbar-header'>\r\n            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>\r\n                <span class='sr-only'>Toggle navigation</span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n                <span class='icon-bar'></span>\r\n            </button>\r\n            <a class='navbar-brand' [routerLink]='[\"/\"]'>Menu</a>\r\n        </div>\r\n        <div class='clearfix'></div>\r\n        <div class='navbar-collapse collapse' [ngClass]='{ \"in\": isExpanded }'>\r\n            <ul class='nav navbar-nav'>\r\n                <li [routerLinkActive]='[\"link-active\"]' [routerLinkActiveOptions]='{ exact: true }'>\r\n                    <a [routerLink]='[\"/\"]' (click)='collapse()'>\r\n                        <span class='glyphicon glyphicon-home'></span> Home\r\n                    </a>\r\n                </li>\r\n                <li [routerLinkActive]='[\"link-active\"]'>\r\n                  <a [routerLink]='[\"/about-me\"]' skipLocationChange (click)='collapse()'>\r\n                      <span class='glyphicon glyphicon-user'></span> About Me\r\n                  </a>\r\n                </li>\r\n                <li [routerLinkActive]='[\"link-active\"]'>\r\n                  <a [routerLink]='[\"/contact-me\"]' skipLocationChange (click)='collapse()'>\r\n                      <span class='glyphicon glyphicon-pencil'></span> Contact Me\r\n                  </a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
