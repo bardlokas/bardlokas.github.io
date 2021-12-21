@@ -1,47 +1,73 @@
-
 <!DOCTYPE html>
 <html>
-    <style>
-        h1 {text-align: center;}
-        h2 {text-align: center;}
-        h3 {text-align: center;}
-        p {text-align: center;}
-        form {text-align: center;}
-        div {text-align: center;}
-        .center {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 50%;
-        }
-        </style>
-<body style="background-color:black;">
-<div>
-  <!-- <a href="answer.html"> -->
-    <img src="well.gif" width="1000" />
-  <!-- </a> -->
-
-</div>
-<p style=color:red;font-size:x-large>H̸a̸v̸e̴ ̸y̸o̵u̴ ̶f̶i̵g̵u̵r̶e̵d̶ ̷o̷u̸t̵ ̸y̶o̴u̴r̶ ̵g̶i̸f̶t̸ ̴y̸e̸t̸?̷</p>
-<div>
-  <label style=color:red>WHAT IS THE GIFT:</label>
-  <input type="text" id="answer"><br><br>
-  <button onclick="answer()">ANSWER</button> 
-</div>
-<script>
-function answer(){
-  let x = document.getElementById("answer").value; 
-  let answerWord = "well".toUpperCase();
-  if(x) {
-    let y = x.toUpperCase();
-    if(y.includes(answerWord)) {
-      window.location.replace('answer.html');
-        } else {
-      alert("THAT IS WRONG!!!!!!!");
-    }
+<style>
+  h1 {
+    text-align: center;
   }
-}
-</script>
-</body>
-</html>
 
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  div {
+    text-align: center;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+</style>
+
+<body style="background-color:black;">
+  <h1 class="counter-display">1</h1>
+  <div>
+    <img src="well.gif" width="1000" />
+  </div>
+  <p style=color:red;font-size:x-large>H̸a̸v̸e̴ ̸y̸o̵u̴ ̶f̶i̵g̵u̵r̶e̵d̶ ̷o̷u̸t̵ ̸y̶o̴u̴r̶ ̵g̶i̸f̶t̸ ̴y̸e̸t̸?̷</p>
+  <div>
+    <label style=color:red>WHAT IS THE GIFT:</label>
+    <input type="text" id="answer"><br><br>
+    <button onclick="answer()">ANSWER</button>
+  </div>
+  <script>
+    function answer() {
+      let x = document.getElementById("answer").value;
+      let answerWord = "well".toUpperCase();
+      let counterDisplayElem = document.querySelector('.counter-display');
+      if (x) {
+        let y = x.toUpperCase();
+        if (y.includes(answerWord)) {
+          window.location.replace('answer.html');
+        } else {
+          let errorCount = parseInt(counterDisplayElem.textContent);
+          if (errorCount > 3) {
+            alert("Need a hint? Try sending a text to the great Bård");
+            let newValue = errorCount + 1;
+            counterDisplayElem.innerHTML = newValue;
+          } else {
+            alert("THAT IS WRONG!!!!!!!");
+            let newValue = errorCount + 1;
+            counterDisplayElem.innerHTML = newValue;
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
