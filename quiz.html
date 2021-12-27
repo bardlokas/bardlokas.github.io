@@ -1,39 +1,106 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-h1 {text-align: center;}
-h2 {text-align: center;}
-h3 {text-align: center;}
-p {text-align: center;}
-div {text-align: center;}
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-</style>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    div {
+      text-align: center;
+    }
+
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Quiz</h1>
-<input type="button" value="Get Questions" onclick="test()"/>
-<div id="quiz">
-<span id="question1"></span>
-</div>
+  <h1>Quiz</h1>
+  <input type="button" value="Get A New Question" onclick="test()" />
+  <div id="quiz">
+    <br />
+    <div>
+      <span id="category"></span>
+      <br />
+      <span id="question"></span>
+      <br />
+      <span id="answer" style="visibility: hidden;"></span>
+      <div id="answerBtns">
 
-    
-<script>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
     function test() {
-        let uri = 'https://opentdb.com/api.php?amount=10';
-        fetch(uri)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  });
+      let uri = 'https://opentdb.com/api.php?amount=1';
+      fetch(uri)
+        .then(response => response.json())
+        .then(data => {
+
+          console.log(data);
+          let array = data.results;
+          array.forEach(function (question) {
+            document.getElementById("category").textContent = "'" + question.category + ":'";
+            document.getElementById("question").textContent = question.question;
+            let answers = question.incorrect_answers;
+            let correctAnswer = question.correct_answer;
+            document.getElementById("answer").textContent = question.correct_answer;
+            answers.push(correctAnswer);
+
+            const shuffledArray = answers.sort((a, b) => 0.5 - Math.random());
+            const parent = document.getElementById("answerBtns")
+            if (parent.firstChild) {
+
+              while (parent.firstChild) {
+                parent.firstChild.remove()
+              }
+            }
+
+            shuffledArray.forEach(function (btnText) {
+              let btn = document.createElement("button");
+              btn.innerHTML = btnText;
+              btn.onclick = answerClick;
+              parent.appendChild(btn);
+            });
+          })
+
+        });
 
     }
-</script>
+
+    function answerClick() {
+        let answerChosen = event.srcElement.outerText;
+        let correctAnswer = document.getElementById("answer").textContent;
+
+        if(answerChosen == correctAnswer) {
+          alert("Correct!!");
+        } else {
+          alert("WRONG");
+        }
+
+    }
+  </script>
 </body>
+
 </html>
