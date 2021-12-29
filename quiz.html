@@ -35,6 +35,14 @@
 <body>
 
   <h1>Quiz</h1>
+  <h2><span>Score:</span>
+    <span id="scoreSpan">
+      0
+    </span>
+    <br />
+    <span>Question #:</span>
+    <span id="amountOfQuestions">1</span>
+  </h2>
   <input type="button" value="Get A New Question" onclick="test()" />
   <div id="quiz">
     <br />
@@ -58,7 +66,6 @@
         .then(response => response.json())
         .then(data => {
 
-          console.log(data);
           let array = data.results;
           array.forEach(function (question) {
             document.getElementById("category").textContent = "'" + question.category + ":'";
@@ -90,15 +97,27 @@
     }
 
     function answerClick() {
-        let answerChosen = event.srcElement.outerText;
-        let correctAnswer = document.getElementById("answer").textContent;
+      let answerChosen = event.srcElement.textContent.toUpperCase();
+      let correctAnswer = document.getElementById("answer").textContent.toUpperCase();
+      let amountOfQuestions = document.getElementById("amountOfQuestions");
+      let amountOfQuestionsAsNum = parseInt(amountOfQuestions.textContent);
+      if(amountOfQuestionsAsNum > 10) {
+          alert("test");
+      } else {
 
-        if(answerChosen == correctAnswer) {
-          alert("Correct!!");
-        } else {
-          alert("WRONG");
-        }
-
+      let newAmountOfQuestions = amountOfQuestionsAsNum + 1;
+      amountOfQuestions.innerHTML = newAmountOfQuestions;
+      if (answerChosen == correctAnswer) {
+        alert("Correct!!");
+        let currentScore = document.getElementById("scoreSpan");
+        let scoreAsNum = parseInt(currentScore.textContent);
+        let newScore = scoreAsNum + 1;
+        currentScore.innerHTML = newScore;
+      } else {
+        alert("WRONG");
+      }
+      test();
+    }
     }
   </script>
 </body>
